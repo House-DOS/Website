@@ -1,4 +1,73 @@
 <!DOCTYPE html>
 <html>
-
+  <head>
+    <title>The House-DOS Project</title>
+  </head>
+  <body>
+    <h1>House-DOS</h1>
+    <i>A real-mode x86 Operating System Written Fully in X86 Assembler</i>
+    <hr>
+    <p>
+      Welcome to the House-DOS Project!
+      I created the House-DOS project in June of 2020, in the midst of the most boring summer break in modern history.
+      I've been fascinated with low-level computing for years, and was interested in looking into operating-system design.
+      So, naturally, I wanted to <i>make</i> one.
+    </p>
+    <p>
+      This wasn't my first try at an operating system.
+      I attempted to make an operating system the year before, also entirely in assembler.
+      However, I was designing it around a graphical interface from the start.
+      This led me to ignore the more important bits of any system, like programs, memory management, files, and general code cleanliness.
+      Also, I wasn't nearly as experienced in assembler.
+    </p>
+    <p>
+      Having learned from my previous failure, I started by researching the FAT filesystem and taking a look at example code.
+      I then wrote code to read files off of a FAT16 filesystem, using BIOS disk functions and lots of logic.
+      I started creating an interface for programs to work with the kernel through system calls.
+      I continued expanding the capabilities of the kernel and created a basic feature set of programs: a file writer, and a file viewer.
+      And then I had my first full version, <code>v0.0.0</code>.
+    </p>
+    <p>
+      As I continued, I began thinking about a structural element I wanted to add.
+      Something that would unify the system and provide a base for programs to work off of.
+      That, of course, was what I called the I/O Buffer.
+      Effectively, a place where programs would be given an input, and where programs would store their output to be given to the user.
+      It would also double as the place where files were loaded into.
+      This would open up many capabilities I always associated with UNIX systems, like output forwarding and pipelines, as well as device files.
+      These things always seemed really cool, and I knew they would also be very useful features.
+    </p>
+    <p>
+      I continued expanding the feature-set of the kernel and developed utility programs to harness those features, and eventually, I ended up with a <i>usable system.</i>
+      Usable, in that it had all the basic file operations one could ask for, including a full-on text-editor.
+      But seriously, it was usable, and that to me was simply amazing.
+      I never would have thought that I could have developed an operating system that read and wrote files, renamed and deleted them, and had a calculator.
+      And beyond that, it had a vast array of system calls, which opened up possibilities for innumerable other programs that I'm not creative enough to even comprehend.
+    </p>
+    <p>
+      Of course, I can't mention any of this without mentioning the people who helped me along the way.
+      I'd like to thank Ben for all his work, including helping me a lot with debugging code and fixing logic, as well as creating the text editor.
+      I'd also like to thank Jet for his interest in the project, and his work on a soon-to-be-released game (it's in the process of being optimized/cleaned).
+      Finally, I'd also like to thank Derrick for his help in making some of the design choices.
+    </p>
+    <p>
+      The last thing I'd like to talk about is one important thing I learned (and still am learning) the hard way:
+      <b>DON'T MESS AROUND WITH SEGMENTATION TOO MUCH.</b>
+      Seriously, keeping track of segment registers is too much work, and I didn't begin with a system in mind for making it easier.
+      I can't tell you how many times something hasn't worked, the wrong number has been read, or something in general just goes wrong all because I forgot to re-set a segment register.
+      So please, if you try something like this, come up with a system beforehand.
+    </p>
+    <p>
+      Thank you for checking out this project!
+      You can find the source code and lots of other info at <a href="https://github.com/HouseHouseHouseHouseHouseHouse/House-DOS/">https://github.com/HouseHouseHouseHouseHouseHouse/House-DOS/.</a>
+    </p>
+    <p>
+      Regards,
+      <br>
+      <i>
+        Jacob Bates
+        <br>
+        <q>House</q>
+      </i>
+    </p>
+  </body>
 </html>
